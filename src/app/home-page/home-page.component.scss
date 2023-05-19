@@ -1,0 +1,44 @@
+
+
+body
+{
+    background-image: url(../../assets/coffee-beans.jpg);
+    max-height: 100vh;
+    justify-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,{
+    text-align: center;
+    color: #fff;
+    backdrop-filter: blur(10px);
+}
+ p{
+    text-align: center;
+    color: #fff;
+
+    backdrop-filter: blur(10px);
+ }
+
+nav{
+    background-color: #58608d;
+}
+
+a.navbar-brand{
+    color: #f8f8f8;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+span{
+    color: #e27901;
+    font-weight: 700;
+}
+
+a.nav-link{
+    font-family: cursive;
+    font-weight: 900;
+    font-style: italic;
+    color: #e7e7ec;
+}
