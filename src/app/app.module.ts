@@ -15,6 +15,12 @@ import { CartComponent } from './cart/cart.component';
     MenuComponent,
     CartComponent,
   ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
+  ],
 
   providers: [],
   bootstrap: [AppComponent]
