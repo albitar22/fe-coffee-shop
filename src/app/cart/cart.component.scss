@@ -1,0 +1,36 @@
+.cart-container {
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+}
+
+.cart-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.empty-cart-message {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cart-items-container {
+  margin-top: 20px;
+}
+
+.cart-items-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cart-item {
+  margin-bottom: 10px;
+}
+
+.cart-total {
+  font-weight: bold;
+  text-align: right;
+}

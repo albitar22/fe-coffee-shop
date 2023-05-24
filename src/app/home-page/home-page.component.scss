@@ -1,44 +1,131 @@
-
-
-body
-{
-    background-image: url(../../assets/coffee-beans.jpg);
-    max-height: 100vh;
-    justify-items: center;
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-h1,
-h2,
-h3,
-h4,{
-    text-align: center;
-    color: #fff;
-    backdrop-filter: blur(10px);
-}
- p{
-    text-align: center;
-    color: #fff;
-
-    backdrop-filter: blur(10px);
- }
-
-nav{
-    background-color: #58608d;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-a.navbar-brand{
-    color: #f8f8f8;
-    font-family: 'Courier New', Courier, monospace;
+.text-center {
+  text-align: center;
+}
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
 }
 
-span{
-    color: #e27901;
-    font-weight: 700;
+.heading {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-a.nav-link{
-    font-family: cursive;
-    font-weight: 900;
-    font-style: italic;
-    color: #e7e7ec;
+.description {
+  font-size: 16px;
+  color: #777;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-brand span {
+  color: #ff5e3a;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  margin-right: 10px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff5e3a;
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  margin: 30px 0;
+}
+
+header h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+/* Main styles */
+main {
+  margin-bottom: 50px;
+}
+
+main h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+main p {
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Menu styles */
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  color: #555;
+}
+
+/* Contact styles */
+main h2:last-child,
+main p:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer styles */
+footer {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  color: #555;
+}
+
+.text-body-secondary {
+  color: #888;
 }
