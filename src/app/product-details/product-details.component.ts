@@ -12,8 +12,7 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const productId = this.route.snapshot.paramMap.get('id');
-
+    const productId = this.route.snapshot.paramMap.get('categoryName');
     this.product = {
       id: productId,
       name: 'Product 1',
@@ -22,8 +21,6 @@ export class ProductDetailsComponent implements OnInit {
     };
   }
   addToCart(product: any) {
-    // Implement the logic to add the product to the cart
-    // For example:
     console.log('Adding product to cart:', product);
   }
 }

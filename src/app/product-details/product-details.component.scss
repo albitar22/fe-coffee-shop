@@ -1,20 +1,33 @@
-.product-details-container {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .product-name {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .product-description {
-    margin-bottom: 10px;
-  }
-  
-  .product-price {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
+.card {
+ /* From https://css.glass */
+background: rgba(22, 22, 22, 0.24);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10.2px);
+-webkit-backdrop-filter: blur(10.2px);
+border: 1px solid rgba(22, 22, 22, 0.4);
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}

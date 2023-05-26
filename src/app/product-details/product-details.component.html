@@ -1,9 +1,12 @@
 <h2>Product Details</h2>
+<div class="card" style="width: 18rem;">
+  <div *ngIf="product">
+    <h3>{{ product.name }}</h3>
+    <h4>{{ product.price | currency }}</h4>
+    <p>{{ product.description }}</p>
+    <div class="d-grid gap-2">
+      <button class="btn btn-outline-dark" type="button" (click)="addToCart(product)">add To Cart</button>
+    </div>
 
-<div *ngIf="product">
-  <h3>{{ product.name }}</h3>
-  <h4>{{ product.price | currency }}</h4>
-  <p>{{ product.description }}</p>
-
-  <button (click)="addToCart(product)">Buy</button>
+  </div>
 </div>
