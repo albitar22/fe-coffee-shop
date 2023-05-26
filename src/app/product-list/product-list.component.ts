@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductListComponent implements OnInit {
   categoryId!: string;
   categoryName!: string;
-  products: any[] = []; // Define the products property and initialize it as an empty array
+  products: any[] = [];
 
   constructor(private route: ActivatedRoute) { }
 
@@ -22,13 +22,9 @@ export class ProductListComponent implements OnInit {
   }
 
   fetchProducts() {
-    // Fetch products based on categoryId
-    // Assign the fetched products to the 'products' array
   }
 
   getCategoryName(categoryId: string): string {
-    // Perform the necessary logic to retrieve the category name based on the categoryId
-    // Replace this with your own implementation
     return 'Category Name';
   }
 }

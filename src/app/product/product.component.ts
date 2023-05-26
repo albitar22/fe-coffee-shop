@@ -18,11 +18,13 @@ export class ProductComponent implements OnInit {
       id: productId,
       name: 'Product 1',
       description: 'This is a sample product',
-      price: 10.99
+      price: 10.99,
     };
+    
   }
 
   addToCart(product: any) {
     console.log('Adding product to cart:', product);
   }
 }
+export { ProductComponent as Product };
