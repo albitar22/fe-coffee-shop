@@ -1,22 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
+import { Product } from '../product/product.component';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent {
-  cartItems: any[] = [
-    { name: 'Product 1', price: 10 },
-    { name: 'Product 2', price: 15 },
-    { name: 'Product 3', price: 20 }
-  ];
+export class CartComponent implements OnInit {
+  cartItems: Product[] = [];
 
-  calculateTotal(): number {
-    let total = 0;
-    for (let item of this.cartItems) {
-      total += item.price;
-    }
-    return total;
+  constructor(private cartService: CartService) { }
+
+  ngOnInit() {
+    this.cartItems = this.cartService.getCartItems();
+  }
+
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+  }
+
+  removeFromCart(productId: number) {
+    this.cartService.removeFromCart(productId);
+    this.cartItems = this.cartService.getCartItems();
+  }
+
+  getCartTotal(): number {
+    return this.cartService.getCartTotal();
   }
 }

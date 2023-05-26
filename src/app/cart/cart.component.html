@@ -7,8 +7,9 @@
     <ul class="cart-items-list">
       <li *ngFor="let item of cartItems" class="cart-item">
         {{ item.name }} - {{ item.price }}
+        <button (click)="removeFromCart(item.id)">Remove</button>
       </li>
     </ul>
-    <p class="cart-total">Total: {{ calculateTotal() }}</p>
+    <p class="cart-total">Total: {{ getCartTotal() }}</p>
   </div>
 </div>

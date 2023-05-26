@@ -7,15 +7,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  product: any; // Placeholder for product data
+  product: any;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // Get the product ID from the route parameter
     const productId = this.route.snapshot.paramMap.get('id');
 
-    // Fetch product data from your backend or a service using the ID
     this.product = {
       id: productId,
       name: 'Product 1',
@@ -25,7 +23,6 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product: any) {
-    // Implement your logic to add the product to the cart
     console.log('Adding product to cart:', product);
   }
 }
