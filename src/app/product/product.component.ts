@@ -1,30 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
+import { CartService } from '../services/cart.service';
+import { Product } from '../models/product';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnInit {
-  product: any;
+export class ProductComponent {
+  product: Product;
 
-  constructor(private route: ActivatedRoute) { }
-
-  ngOnInit() {
-    const productId = this.route.snapshot.paramMap.get('id');
-
-    this.product = {
-      id: productId,
-      name: 'Product 1',
-      description: 'This is a sample product',
-      price: 10.99,
-    };
-    
+  constructor(private cartService: CartService) {
+    this.product = {} as Product;
   }
 
-  addToCart(product: any) {
-    console.log('Adding product to cart:', product);
+  addToCart(product: Product): void {
+    this.cartService.addToCart(product);
   }
 }
-export { ProductComponent as Product };
