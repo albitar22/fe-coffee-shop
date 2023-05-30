@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class CartService {
   cartItems: Product[] = [];
 
@@ -16,6 +14,7 @@ export class CartService {
     } else {
       this.cartItems.push({ ...product, quantity: 1 });
     }
+    console.log(this.cartItems)
   }
 
   removeFromCart(productId: number) {
@@ -26,6 +25,7 @@ export class CartService {
   }
 
   getCartItems(): Product[] {
+    console.log(this.cartItems);
     return this.cartItems;
   }
 

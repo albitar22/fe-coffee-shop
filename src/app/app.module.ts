@@ -20,6 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { CartService } from './services/cart.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { MatListModule } from '@angular/material/list';
     MatListModule
   ],
 
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
