@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -21,9 +21,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { CartService } from './services/cart.service';
+import { AddNewProductComponent } from './add-new-product/add-new-product.component';
+import { RouterModule } from '@angular/router';
+import { CurrencyPipe } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
+    HttpClientModule,
     AppComponent,
     HomePageComponent,
     MenuComponent,
@@ -35,8 +40,12 @@ import { CartService } from './services/cart.service';
     ProductListComponent,
     ContactUsComponent,
     NavbarComponent,
+    AddNewProductComponent,
   ],
   imports: [
+    RouterModule,
+    FormsModule,
+    CurrencyPipe,
     BrowserModule,
     AppRoutingModule,
     AppRoutingModule,

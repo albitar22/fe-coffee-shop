@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../models/product';
 import { CartService } from '../services/cart.service';
+import { CurrencyPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-product-details',

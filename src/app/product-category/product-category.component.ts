@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 
 interface Category {
   name: string;
@@ -8,7 +11,9 @@ interface Category {
 @Component({
   selector: 'app-product-category',
   templateUrl: './product-category.component.html',
-  styleUrls: ['./product-category.component.scss']
+  styleUrls: ['./product-category.component.scss'],
+  standalone: true,
+  imports: [MatGridListModule],
 })
 export class ProductCategoryComponent {
   categories: Category[] = [

@@ -15,6 +15,10 @@ export class ProductComponent {
   }
 
   addToCart(product: Product): void {
-    this.cartService.addToCart(product);
+    this.cartService.addToCart(product).subscribe(() => {
+
+    }, error => {
+
+    });
   }
 }

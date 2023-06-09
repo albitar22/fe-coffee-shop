@@ -1,39 +1,27 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CartService {
-  cartItems: Product[] = [];
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  getCartItems() {
+    return this.http.get<Product[]>('http://localhost:8080/cart');
+  }
 
   addToCart(product: Product) {
-    let item = this.cartItems.find(item => item.id === product.id);
-    if (item) {
-      item.quantity++;
-    } else {
-      this.cartItems.push({ ...product, quantity: 1 });
-    }
-    console.log(this.cartItems)
+    return this.http.post('http://localhost:8080/cart', product);
   }
 
-  removeFromCart(productId: number) {
-    let index = this.cartItems.findIndex(item => item.id === productId);
-    if (index !== -1) {
-      this.cartItems.splice(index, 1);
-    }
+  removeFromCart(itemId: number) {
+    return this.http.delete(`http://localhost:8080/cart/${itemId}`);
   }
 
-  getCartItems(): Product[] {
-    console.log(this.cartItems);
-    return this.cartItems;
-  }
-
-  getCartTotal(): number {
-    return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-  }
-
-  clearCart() {
-    this.cartItems = [];
+  getCartTotal() {
+    return this
   }
 }
+
