@@ -25,8 +25,9 @@ export class ProductCategoryComponent {
   ];
 
   constructor(private router:Router) { }
-btnClick(){
-this.router.navigateByUrl("/product");
+  toTheProduct(category:Category){
+this.router.navigateByUrl('/product/${Category.Name}');
+console.log(this.toTheProduct);
 }
   
 }

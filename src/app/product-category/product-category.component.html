@@ -4,7 +4,7 @@
   <div class="row">
     <div *ngFor="let category of categories" class="col-md-4">
       <div class="card mb-4">
-        <a (click)="btnClick" routerLink="['/product', category.Name]">
+        <a (click)="toTheProduct(category)" routerLink="['/product', category.Name]">
           <img [src]="category.photoUrl" alt="{{ category.name }}" class="card-img-top" />
           <div class="card-body">
             <h3 class="card-title">{{ category.name }}</h3>
