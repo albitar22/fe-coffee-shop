@@ -1,17 +1,24 @@
-<h2>Add New Product</h2>
-<form (ngSubmit)="addProduct()" #productForm="ngForm">
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" [(ngModel)]="newProduct.name" required>
-  </div>
-  
-  <div>
-    <label for="price">Price:</label>
-    <input type="number" id="price" name="price" [(ngModel)]="newProduct.price" required>
+    <input type="text" id="name" formControlName="name">
+    <div *ngIf="productForm.controls.name.invalid && productForm.controls.name.touched" class="error-message">
+      Name is required.
+    </div>
   </div>
   <div>
     <label for="description">Description:</label>
-    <textarea id="description" name="description" [(ngModel)]="newProduct.description" required></textarea>
+    <textarea id="description" formControlName="description"></textarea>
+    <div *ngIf="productForm.controls.description.invalid && productForm.controls.description.touched" class="error-message">
+      Description is required.
+    </div>
   </div>
-  <button type="submit" [disabled]="!productForm.valid">Add Product</button>
+  <div>
+    <label for="price">Price:</label>
+    <input type="number" id="price" formControlName="price">
+    <div *ngIf="productForm.controls.price.invalid && productForm.controls.price.touched" class="error-message">
+      Price is required.
+    </div>
+  </div>
+  <button type="submit" [disabled]="productForm.invalid">Submit</button>
 </form>

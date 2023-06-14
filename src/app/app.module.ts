@@ -9,12 +9,10 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProfileComponent } from './profile/profile.component';
-import { ProductCategoryComponent } from './product-category/product-category.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -24,23 +22,21 @@ import { CartService } from './services/cart.service';
 import { AddNewProductComponent } from './add-new-product/add-new-product.component';
 import { RouterModule } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProductCategoryComponent } from './product-category/product-category.component';
+
 
 @NgModule({
   declarations: [
-    HttpClientModule,
     AppComponent,
     HomePageComponent,
     MenuComponent,
     ProductDetailsComponent,
     ProfileComponent,
-    ProductCategoryComponent,
     AdminDashboardComponent,
     CartComponent,
     ProductListComponent,
     ContactUsComponent,
-    NavbarComponent,
-    AddNewProductComponent,
+    AddNewProductComponent
   ],
   imports: [
     RouterModule,
@@ -48,14 +44,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     CurrencyPipe,
     BrowserModule,
     AppRoutingModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ProductCategoryComponent
   ],
 
   providers: [CartService],

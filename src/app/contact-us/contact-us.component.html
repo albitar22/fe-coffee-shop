@@ -5,7 +5,6 @@
     <label for="name">Name</label>
     <input type="text" id="name" class="form-control" formControlName="name">
     <div *ngIf="formControls['name'].invalid && formControls['name'].touched" class="text-danger">
-
       Please enter your name.
     </div>
   </div>
@@ -14,7 +13,6 @@
     <label for="email">Email</label>
     <input type="email" id="email" class="form-control" formControlName="email">
     <div *ngIf="formControls['email'].invalid && formControls['email'].touched" class="text-danger">
-
       Please enter a valid email address.
     </div>
   </div>
@@ -24,7 +22,6 @@
     <textarea id="message" class="form-control" formControlName="message">
 
     </textarea><div *ngIf="formControls['message'].invalid && formControls['message'].touched" class="text-danger">
-
       Please enter a message.
     </div>
   </div>
