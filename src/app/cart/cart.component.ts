@@ -9,6 +9,7 @@ import { Product } from '../models/product';
 })
 export class CartComponent implements OnInit {
   cartItems: Product[] = [];
+  cartTotal: number = 0;
 
   constructor(private cartService: CartService) {}
 
@@ -16,6 +17,7 @@ export class CartComponent implements OnInit {
     this.cartService.getCartItems().subscribe(items => {
       this.cartItems = items;
     });
+    this.calculateCartTotal();
   }
 
   addToCart(product: Product): void {
@@ -34,11 +36,9 @@ export class CartComponent implements OnInit {
     });
   }
 
-  getCartTotal(): number {
-    let total = 0;
-    this.cartService.getCartTotal().subscribe(value => {
-      total = value;
+  calculateCartTotal(): void {
+    this.cartService.getCartTotal().subscribe((value: number) => {
+      this.cartTotal = value;
     });
-    return total;
   }
 }

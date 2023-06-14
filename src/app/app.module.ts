@@ -21,7 +21,7 @@ import { MatListModule } from '@angular/material/list';
 import { CartService } from './services/cart.service';
 import { AddNewProductComponent } from './add-new-product/add-new-product.component';
 import { RouterModule } from '@angular/router';
-import { CurrencyPipe } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 
 
@@ -39,6 +39,7 @@ import { ProductCategoryComponent } from './product-category/product-category.co
     AddNewProductComponent
   ],
   imports: [
+    CommonModule,
     RouterModule,
     FormsModule,
     CurrencyPipe,
