@@ -1,8 +1,8 @@
-<nav>
-    <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/products">Products</a></li>
-      <li><a routerLink="/profile">Profile</a></li>
-    </ul>
-  </nav>
-  
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item onclick = "window.location.href='cart';">Cart</button>
+  <button mat-menu-item onclick = "window.location.href='profile';">Profile</button>
+  <button mat-menu-item onclick = "window.location.href='us';">About us</button>
+  <button mat-menu-item onclick = "window.location.href='admin';">Admen</button>
+  <button mat-menu-item onclick = "window.location.href='home';">Go Home page</button>
+</mat-menu>

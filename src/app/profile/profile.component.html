@@ -1,16 +1,11 @@
 <div class="card-container">
   <div class="card">
     <h2 class="profile-heading">Welcome to your Profile</h2>
-
-    <!-- Display user details -->
     <div class="user-details-container">
       <h3 class="section-heading">User Details:</h3>
       <p><strong>Name:</strong> {{ user?.name }}</p>
       <p><strong>Email:</strong> {{ user?.email }}</p>
-      <!-- Add more details as needed -->
     </div>
-
-    <!-- Display user orders -->
     <div class="user-orders-container">
       <h3 class="section-heading">Orders:</h3>
       <ul class="orders-list">
@@ -18,8 +13,6 @@
       </ul>
       <p *ngIf="orders.length === 0" class="no-orders-message">No orders found.</p>
     </div>
-
-    <!-- Display user cart -->
     <div class="user-cart-container">
       <h3 class="section-heading">Cart:</h3>
       <ul class="cart-items-list">

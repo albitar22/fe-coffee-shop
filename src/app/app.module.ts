@@ -25,6 +25,8 @@ import { CommonModule, CurrencyPipe } from '@angular/common';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './product/product.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -32,16 +34,18 @@ import { ProductComponent } from './product/product.component';
     ProductComponent,
     AppComponent,
     HomePageComponent,
-    MenuComponent,
     ProductDetailsComponent,
     ProfileComponent,
     AdminDashboardComponent,
     CartComponent,
     ProductListComponent,
     ContactUsComponent,
-    AddNewProductComponent
+    AddNewProductComponent,
+    AboutUsComponent
   ],
   imports: [
+    MenuComponent,
+    MatMenuModule,
     HttpClientModule,
     CommonModule,
     RouterModule,

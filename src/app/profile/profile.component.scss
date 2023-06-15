@@ -1,19 +1,23 @@
 .card-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh;
 }
 
 .card {
-  width: 600px; /* Adjust the width as desired */
+  width: 600px; 
   max-width: 100%;
-  margin: 0 auto; /* Center the card horizontally */
+  margin: 0 auto; 
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f5f5f5;
-  text-align: center; /* Center the content within the card */
+  border: 1px solid #5c5858;
+  border-radius: 25px;
+background: rgba(133, 116, 116, 0.16);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(11.4px);
+-webkit-backdrop-filter: blur(11.4px);
+border: 1px solid rgba(133, 116, 116, 1);
+  text-align: center; 
 }
 
 
@@ -53,5 +57,5 @@
 .user-details-container,
 .user-orders-container,
 .user-cart-container {
-  margin-bottom: 20px; /* Add space between sections */
+  margin-bottom: 20px; 
 }

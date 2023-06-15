@@ -1,15 +1,17 @@
-<div class="cart-container">
-  <h2 class="cart-heading">Cart</h2>
-  <div *ngIf="cartItems.length === 0" class="empty-cart-message">
-    <p>Your cart is empty.</p>
-  </div>
-  <div *ngIf="cartItems.length > 0" class="cart-items-container">
-    <ul class="cart-items-list">
-      <li *ngFor="let item of cartItems" class="cart-item">
-        {{ item.name }} - {{ item.price }}
-        <button (click)="removeFromCart(item.id)">Remove</button>
-      </li>
-    </ul>
-    <p class="cart-total">Total: {{ cartTotal }}</p>
+<div class="mgr">
+  <div class="cart-container">
+    <h2 class="cart-heading">Cart</h2>
+    <div *ngIf="cartItems.length === 0" class="empty-cart-message">
+      <p>Your cart is empty.</p>
+    </div>
+    <div *ngIf="cartItems.length > 0" class="cart-items-container">
+      <ul class="cart-items-list">
+        <li *ngFor="let item of cartItems" class="cart-item">
+          {{ item.name }} - {{ item.price }}
+          <button (click)="removeFromCart(item.id)">Remove</button>
+        </li>
+      </ul>
+      <p class="cart-total">Total: {{ cartTotal }}</p>
+    </div>
   </div>
 </div>
