@@ -1,8 +1,7 @@
-
-<div class="category-container">
+<div class="category-container" >
   <h2>Product Categories</h2>
   <div class="row">
-    <div *ngFor="let category of categories" class="col-md-4">
+    <div *ngFor="let category of categories" class="col-md-6 col-lg-3">
       <div class="card mb-4">
         <a (click)="toTheProduct(category)" routerLink="['/product', category.Name]">
           <img [src]="category.photoUrl" alt="{{ category.name }}" class="card-img-top" />

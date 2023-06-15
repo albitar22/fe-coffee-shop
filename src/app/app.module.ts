@@ -23,6 +23,7 @@ import { AddNewProductComponent } from './add-new-product/add-new-product.compon
 import { RouterModule } from '@angular/router';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { ProductCategoryComponent } from './product-category/product-category.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ProductCategoryComponent } from './product-category/product-category.co
     AddNewProductComponent
   ],
   imports: [
+    HttpClientModule,
     CommonModule,
     RouterModule,
     FormsModule,

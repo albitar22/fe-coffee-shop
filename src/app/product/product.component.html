@@ -1,6 +1,13 @@
-<div *ngIf="product" class="product-container">
-  <h2 class="product-name">{{ product.name }}</h2>
-  <p class="product-description">{{ product.description }}</p>
-  <p class="product-price">Price: ${{ product.price }}</p>
-  <button class="add-to-cart-button" (click)="addToCart(product)">Add to Cart</button>
+<h2>Products</h2>
+
+<div class="card-container">
+  <div class="card" *ngFor="let product of products">
+    <div class="card-header">
+      <h3 class="card-title">{{ product.name }}</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-text">ID: {{ product.id }}</p>
+      <p class="card-text">Price: {{ product.price }}</p>
+    </div>
+  </div>
 </div>

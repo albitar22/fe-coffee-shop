@@ -1,26 +1,35 @@
-import { Injectable } from '@angular/core';  
-import { Product } from '../models/product';  
-  
-  
-@Injectable({  
-  providedIn: 'root'  
-})  
-export class ProductService {  
-  productList: Array<Product> = ([  
-    { id: 1, name: 'coffee1', price: 12000, description: 'New Mobile', quantity: 2 },  
-    { id: 2, name: 'coffee2', price: 30000, description: 'New Computer',quantity: 4 },  
-    { id: 3, name: 'coffee3', price: 800, description: 'New Cabinet' ,quantity: 1},  
-    { id: 4, name: 'coffee4', price: 1000, description: 'New HDD', quantity: 2 }  
-  
-  ])  
-  constructor() { }  
-  get() {  
-    return this.productList;  
-  }  
-  products: any[] = [];
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-  addProduct(newProduct: any) {
-    this.products.push(newProduct);
+@Injectable({
+  providedIn: 'root'
+})
+export class ProductService {
+  private baseUrl = 'http://localhost:8080/api/products'; // Replace with your Spring Boot API URL
+
+  constructor(private http: HttpClient) { }
+
+  getProducts(): Observable<any> {
+    return this.http.get<any>(this.baseUrl);
+  }
+
+  getProduct(id: number): Observable<any> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<any>(url);
+  }
+
+  createProduct(product: any): Observable<any> {
+    return this.http.post<any>(this.baseUrl, product);
+  }
+
+  updateProduct(id: number, product: any): Observable<any> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.put<any>(url, product);
+  }
+
+  deleteProduct(id: number): Observable<any> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.delete<any>(url);
   }
 }
-
