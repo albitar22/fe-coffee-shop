@@ -6,10 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  private baseUrl = 'http://localhost:8080/api/products'; // Replace with your Spring Boot API URL
+  private baseUrl = 'http://localhost:8080/api/products';
 
   constructor(private http: HttpClient) { }
-
   getProducts(): Observable<any> {
     return this.http.get<any>(this.baseUrl);
   }

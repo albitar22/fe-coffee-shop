@@ -24,10 +24,12 @@ import { RouterModule } from '@angular/router';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
   declarations: [
+    ProductComponent,
     AppComponent,
     HomePageComponent,
     MenuComponent,

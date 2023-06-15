@@ -8,10 +8,10 @@ import { Product } from '../models/product';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent {
-  product: Product;
+  products: Product[] =[ ];
 
   constructor(private cartService: CartService) {
-    this.product = {} as Product;
+ 
   }
 
   addToCart(product: Product): void {
