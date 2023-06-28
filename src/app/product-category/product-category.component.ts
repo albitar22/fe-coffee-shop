@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CategoryService } from '../services/Category/category.service'; 
 
 interface Category {
   name: string;
@@ -11,15 +12,20 @@ interface Category {
   templateUrl: './product-category.component.html',
   styleUrls: ['./product-category.component.scss']
 })
-export class ProductCategoryComponent {
-  categories: Category[] = [
-    { name: 'Arabica', photoUrl: '../../assets/category1.jpg' },
-    { name: 'Robusta', photoUrl: '../../assets/category2.jpg' },
-    { name: 'Excelsa', photoUrl: '../../assets/category3.jpg' },
-    { name: 'Liberica', photoUrl: '../../assets/category4.jpg' }
-  ];
+export class ProductCategoryComponent implements OnInit {
+  categories: Category[] = []; 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private categoryService: CategoryService) { }
+
+  ngOnInit() {
+    this.loadCategories();
+  }
+
+  loadCategories() {
+    this.categoryService.getCategories().subscribe((categories: Category[]) => {
+      this.categories = categories;
+    });
+  }
 
   toTheProduct(category: Category) {
     this.router.navigateByUrl(`/product/${category.name}`);

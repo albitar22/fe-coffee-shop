@@ -18,7 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { CartService } from './services/cart.service';
+import { CartService } from './services/Cart/cart.service';
 import { AddNewProductComponent } from './add-new-product/add-new-product.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule, CurrencyPipe } from '@angular/common';
