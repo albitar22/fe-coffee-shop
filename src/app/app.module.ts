@@ -33,6 +33,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
   declarations: [
     ProductComponent,
     AppComponent,
+    ProductCategoryComponent,
     HomePageComponent,
     ProductDetailsComponent,
     ProfileComponent,
@@ -59,8 +60,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule,
-    ProductCategoryComponent
+    MatListModule
   ],
 
   providers: [CartService],

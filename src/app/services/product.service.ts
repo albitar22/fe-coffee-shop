@@ -6,11 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  private baseUrl = 'http://localhost:8080/api/products';
+  private baseUrl = 'http://localhost:8080/api/product';
 
   constructor(private http: HttpClient) { }
+
   getProducts(): Observable<any> {
     return this.http.get<any>(this.baseUrl);
+  }
+  
+  addProduct(product: any): Observable<any> {
+    return this.http.post<any>(this.baseUrl, product);
   }
 
   getProduct(id: number): Observable<any> {
@@ -30,5 +35,10 @@ export class ProductService {
   deleteProduct(id: number): Observable<any> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<any>(url);
+  }
+
+  getProductsByCategory(categoryId: string): Observable<any> {
+    const url = `${this.baseUrl}?categoryId=${categoryId}`;
+    return this.http.get<any>(url);
   }
 }

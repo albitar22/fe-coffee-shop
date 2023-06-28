@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import {MatGridListModule} from '@angular/material/grid-list';
-import { NgForOf } from '@angular/common';
 import { Router } from '@angular/router';
-
 
 interface Category {
   name: string;
@@ -12,9 +9,7 @@ interface Category {
 @Component({
   selector: 'app-product-category',
   templateUrl: './product-category.component.html',
-  styleUrls: ['./product-category.component.scss'],
-  standalone: true,
-  imports: [MatGridListModule , NgForOf],
+  styleUrls: ['./product-category.component.scss']
 })
 export class ProductCategoryComponent {
   categories: Category[] = [
@@ -24,10 +19,9 @@ export class ProductCategoryComponent {
     { name: 'Liberica', photoUrl: '../../assets/category4.jpg' }
   ];
 
-  constructor(private router:Router) { }
-  toTheProduct(category:Category){
-this.router.navigateByUrl('/product/${Category.Name}');
-console.log(this.toTheProduct);
-}
-  
+  constructor(private router: Router) { }
+
+  toTheProduct(category: Category) {
+    this.router.navigateByUrl(`/product/${category.name}`);
+  }
 }

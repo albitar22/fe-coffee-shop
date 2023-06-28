@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../services/product.service';
+import { Product } from '../models/product';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,9 +12,13 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductListComponent implements OnInit {
   categoryId!: string;
   categoryName!: string;
-  products: any[] = [];
+  products: Product[] = [];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductService,
+    private cartService: CartService
+  ) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -22,9 +29,22 @@ export class ProductListComponent implements OnInit {
   }
 
   fetchProducts() {
+    this.productService.getProductsByCategory(this.categoryId).subscribe(
+      (products: Product[]) => {
+        this.products = products;
+      },
+      (error: any) => {
+        console.log('Error retrieving product list:', error);
+      }
+    );
   }
 
   getCategoryName(categoryId: string): string {
     return 'Category Name';
+  }
+
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
   }
 }

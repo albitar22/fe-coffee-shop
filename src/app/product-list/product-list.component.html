@@ -1,15 +1,11 @@
-<div class="category-products-container">
-  <h2 class="category-products-title">Products in {{ categoryName }}</h2>
-  <div class="row">
-    <div *ngFor="let product of products" class="col-md-4">
-      <div class="card mb-4">
-        <img [src]="product.imageUrl" alt="{{ product.name }}" class="card-img-top" />
-        <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">{{ product.description }}</p>
-          <p class="card-price">{{ product.price }}</p>
-        </div>
-      </div>
+<div class="product-list">
+  <h2>{{ categoryName }}</h2>
+  <div class="product-card" *ngFor="let product of products">
+    <img [src]="product.imageUrl" alt="{{ product.name }}" class="card-img-top" />
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-price">{{ product.price | currency }}</p>
+      <button (click)="addToCart(product)">Add to Cart</button>
     </div>
   </div>
 </div>

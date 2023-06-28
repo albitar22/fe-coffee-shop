@@ -1,11 +1,6 @@
-<h2>Product Details</h2>
-<div class="card">
-  <div *ngIf="product">
-    <h3>{{ product.name }}</h3>
-    <h4>{{ product.price}}</h4>
-    <p>{{ product.description }}</p>
-    <div class="d-grid gap-2">
-      <button class="btn btn-outline-dark" type="button" (click)="addToCart(product)">add To Cart</button>
-    </div>
-  </div>
+<div class="product-details">
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.description }}</p>
+  <p>Price: ${{ product.price }}</p>
+  <button (click)="addToCart(product)" class="add-to-cart-btn">Add to Cart</button>
 </div>

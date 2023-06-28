@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 const routes: Routes = [
   
@@ -19,7 +20,11 @@ const routes: Routes = [
     path: 'product/:categoryName',
     component: ProductDetailsComponent
   },
-  { path: 'admin', component: AdminDashboardComponent}
+  { path: 'admin', component: AdminDashboardComponent},
+  {
+    path: 'productList/:categoryName',
+    component: ProductListComponent
+  }
 ];
 
 @NgModule({
