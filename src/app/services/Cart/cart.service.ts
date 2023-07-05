@@ -10,11 +10,11 @@ export class CartService {
   constructor(private http: HttpClient) {}
 
   getCartItems(): Observable<Product[]> {
-    return this.http.get<Product[]>('http://localhost:8080/cart');
+    return this.http.get<Product[]>('http://localhost:8080/cart/');
   }
 
   addToCart(product: Product): Observable<any> {
-    return this.http.post('http://localhost:8080/cart', product);
+    return this.http.post('http://localhost:8080/cart/', product);
   }
 
   removeFromCart(itemId: number): Observable<any> {

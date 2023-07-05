@@ -28,6 +28,6 @@ export class ProductCategoryComponent implements OnInit {
   }
 
   toTheProduct(category: Category) {
-    this.router.navigateByUrl(`/product/${category.name}`);
+    this.router.navigateByUrl(`/productList/${category.name}`);
   }
 }

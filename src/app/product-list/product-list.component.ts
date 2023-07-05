@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/Product/product.service';
 import { Product } from '../models/product';
 import { CartService } from '../services/Cart/cart.service';
+import { Subscription } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-list',
@@ -10,8 +12,8 @@ import { CartService } from '../services/Cart/cart.service';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  categoryId!: string;
-  categoryName!: string;
+  categoryId: string = '';
+  categoryName: string = '';
   products: Product[] = [];
 
   constructor(
@@ -28,17 +30,23 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  fetchProducts() {
-    this.productService.getProductsByCategory(this.categoryId).subscribe(
-      (products: Product[]) => {
-        this.products = products;
-      },
-      (error: any) => {
-        console.log('Error retrieving product list:', error);
-      }
-    );
+  fetchProducts(): Subscription {
+    return this.productService.getProductsByCategory(this.categoryId)
+      .pipe(
+        tap((products: Product[]) => {
+          this.products = products;
+        }),
+        tap({
+          error: (error: any) => {
+            console.error('Error retrieving product list:', error);
+          }
+        })
+      )
+      .subscribe();
   }
 
+  
+  
   getCategoryName(categoryId: string): string {
     return 'Category Name';
   }
