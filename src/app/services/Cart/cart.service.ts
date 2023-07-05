@@ -14,9 +14,18 @@ export class CartService {
   }
 
   async addToCart(product: Product): Promise<any> {
-    return await this.http.post('http://localhost:8080/cart/', product).toPromise();
+    try {
+      const response = await this.http.post('http://localhost:8080/cart/', product).toPromise();
+      return response;
+    } catch (error) {
+      if (error instanceof HttpErrorResponse) {
+        console.error(`HTTP error occurred: ${error.status}`);
+      } else {
+        console.error('An error occurred:', error);
+      }
+      throw error;
+    }
   }
-  
   
 
   removeFromCart(itemId: number): Observable<any> {
