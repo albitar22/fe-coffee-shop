@@ -12,14 +12,10 @@ export class CartService {
   getCartItems(): Observable<Product[]> {
     return this.http.get<Product[]>('http://localhost:8080/cart/');
   }
-  
-/*addToCart(product: Product): Observable<any> {
-    return this.http.post('http://localhost:8080/cart/', product);
-  }*/
 
- /* async addToCart(product: Product): Promise<any> {
+  async addToCart(product: Product): Promise<any> {
     try {
-      const response = await this.http.post('http://localhost:8080/cart/', product).toPromise();
+      const response = await this.http.post('http://localhost:8080/api/carts/', product).toPromise();
       return response;
     } catch (error) {
       if (error instanceof HttpErrorResponse) {
@@ -29,7 +25,7 @@ export class CartService {
       }
       throw error;
     }
-  }*/
+  }
 
   removeFromCart(itemId: number): Observable<any> {
     return this.http.delete(`http://localhost:8080/cart/${itemId}`);
